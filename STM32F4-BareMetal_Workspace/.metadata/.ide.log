@@ -512,3 +512,7 @@
 2025-10-20 14:42:53,265 [INFO] LoadServerUpdatesThread:329 - End of LoadServerUpdate Thread
 2025-10-20 14:43:13,119 [INFO] ApiDb:276 - Save user favorites file C:\Users\ASUS/.stm32cubeide/favorites.mcus.txt: 0 item(s)
 2025-10-20 14:43:13,119 [INFO] ApiDb:280 - User favorites MCUs=[]
+2025-10-20 21:30:54,554 [INFO] Activator:170 - 
+
+
+2025-10-20 21:30:54,558 [INFO] Activator:171 - !SESSION log4j initialized

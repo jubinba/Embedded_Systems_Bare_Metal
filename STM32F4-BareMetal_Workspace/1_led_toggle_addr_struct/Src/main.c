@@ -29,9 +29,49 @@
 #define PIN5							(1U<<5)
 #define LED_PIN                         (PIN5)
 
-/*
- *(1U<<10) // Set only bit 10 to 1
- *&=~(1U<<11) Set only bit 11 to 0*/
+#define __IO volatile
+
+typedef struct
+{
+	volatile uint32_t DUMMY[12];
+	volatile uint32_t AHB1ENR;         // RCC AHB1 peripheral clock register,  Address offset:0x30
+	}RCC_TypeDef;
+
+
+
+/*typedef struct{
+	__IO uint32_t MODER;   	  // GPIO Port mode register
+	__IO uint32_t OTYPER;	  // GPIO port output type register
+	__IO uint32_t OSPEEDR;    // GPIO port output speed register
+	__IO uint32_t PUPDR;      //GPIO port pull-up/pull-down register
+	__IO uint32_t IDR;        //GPIO port input data register
+	__IO uint32_t ODR;        //GPIO port output data register
+	__IO uint32_t BSRR;       //GPIO port bit set/reset register
+	__IO uint32_t LCKR;       //GPIO port configuration lock register
+	__IO uint32_t AFR[2];     //GPIO alternate function registers(HIGH/LOW)
+}; GPIO_TypeDef;/*
+
+// The above structure can be simplified as
+ *
+ * typedef struct{
+	__IO uint32_t MODER;   	  // GPIO Port mode register
+	__IO uint32-t DUMY[4];    // For properly arranging the bit gap between MODER and ODR
+	__IO uint32_t ODR;        //GPIO port output data register. We are using only MODER and ODR, Hence all others can be ignored
+
+}; GPIO_TypeDef;
+
+
+ *
+ *
+ */
+// This can be further simplified as
+typedef struct{
+	volatile uint32_t MODER;   	  // GPIO Port mode register
+	volatile uint32_t DUMMY[4];    // For properly arranging the bit gap between MODER and ODR
+	volatile uint32_t ODR;        //GPIO port output data register. We are using only MODER and ODR, Hence all others can be ignored
+
+}; GPIO_TypeDef;
+
 
 int main (void)
 {
@@ -51,7 +91,7 @@ int main (void)
 
 		/* Trying LED Toggle Operation*/
 		GPIOA_OD_R ^= LED_PIN; // ^ key will automatically toggle operation in the loop (ON/OFF/ON/OFF/......)
-		for(int i = 0; i< 100000;i++)  {} // Applying a delay to the toggle
+		for(int i = 0; i< 100000;i++)  {}// Applying a delay to the toggle
 	}
 }
 

@@ -51,7 +51,7 @@ int main (void)
 
 		/* Trying LED Toggle Operation*/
 		GPIOA_OD_R ^= LED_PIN; // ^ key will automatically toggle operation in the loop (ON/OFF/ON/OFF/......)
-		for(int i = 0; i< 100000;i++)  {} // Applying a delay to the toggle
+		for(int i = 0; i< 100000;i++)  {}// Applying a delay to the toggle
 	}
 }
 
