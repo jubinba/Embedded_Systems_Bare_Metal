@@ -1,0 +1,49 @@
+// User Push Button
+// PC13
+
+
+#include "stm32f4xx.h"
+
+
+#define GPIOAEN     (1U<<0)  // Enable clock access for GPIO A (making lsb 1)
+#define GPIOCEN		(1U<<2) //  Enable clock access for GPIO C
+#define PIN5		(1U<<5)
+#define PIN13       (1U<<13)
+#define LED_PIN      PIN5
+#define BTN_PIN		PIN13
+
+int main(void)
+{
+	// Enable the clock Register for GPIOA and GPIOC
+	RCC->AHB1ENR |= GPIOAEN; // Enabled the Clock for GPIOA
+	RCC->AHB1ENR |= GPIOCEN; // Enabled the Clock for GPIOC
+
+	// Set PA5 as Output Pin
+	GPIOA->MODER |=(1U<<10);//Enable Bit 10 to 1
+	GPIOA->MODER &=~(1U<<11); // Enable Bit 11 to 0
+	// Set PC13 as Input Pin
+	GPIOC->MODER &=~(1U<<26); // Bit 26 and 27 set to (0,0)
+	GPIOC->MODER &=~(1U<<27);
+
+	while(1)
+	{
+		// Check if button is pressed
+		if(GPIOC->IDR & PIN13 ) // returns TRUE/False , TRUE if GPIOC->IDR PIN13 is 1, FALSE IF GPIOC->IDR PIN13 is 0
+		{
+			// Turn ON LED
+			GPIOA->BSRR = LED_PIN; // enabling  Bit 5 ,Setting
+		}
+
+		else{
+				//Turn off LED
+			GPIOA->BSRR = (1U<<21);// Enabling Bit 21 , Resetting
+
+		}
+
+
+
+
+
+
+	}
+}

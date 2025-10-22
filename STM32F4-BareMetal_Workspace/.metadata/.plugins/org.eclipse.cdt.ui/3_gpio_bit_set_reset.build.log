@@ -1,0 +1,10 @@
+12:39:11 **** Incremental Build of configuration Debug for project 3_gpio_bit_set_reset ****
+make -j4 all 
+arm-none-eabi-size   3_gpio_bit_set_reset.elf 
+   text	   data	    bss	    dec	    hex	filename
+    808	      8	   1568	   2384	    950	3_gpio_bit_set_reset.elf
+Finished building: default.size.stdout
+ 
+
+12:39:11 Build Finished. 0 errors, 0 warnings. (took 254ms)
+

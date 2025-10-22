@@ -1,24 +1,24 @@
-11:46:58 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+13:58:25 **** Incremental Build of configuration Debug for project 4_gpio_input ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"C:/Users/ASUS/Desktop/STM32F4-BareMetal_Workspace/F4_chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/ASUS/Desktop/STM32F4-BareMetal_Workspace/F4_chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\2_gpio_output\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 2_gpio_output.elf
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\4_gpio_input\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
  
-arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
-arm-none-eabi-objcopy  -O binary  2_gpio_output.elf  "2_gpio_output.bin"
-arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+arm-none-eabi-objcopy  -O binary  4_gpio_input.elf  "4_gpio_input.bin"
+arm-none-eabi-size   4_gpio_input.elf 
    text	   data	    bss	    dec	    hex	filename
-    784	      8	   1568	   2360	    938	2_gpio_output.elf
+    816	      8	   1568	   2392	    958	4_gpio_input.elf
 Finished building: default.size.stdout
-Finished building: 2_gpio_output.list
-Finished building: 2_gpio_output.bin
+Finished building: 4_gpio_input.list
+ 
+Finished building: 4_gpio_input.bin
  
  
- 
-11:47:23 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+14:00:17 **** Incremental Build of configuration Debug for project 4_gpio_input ****
 make -j4 all 
-arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-size   4_gpio_input.elf 
    text	   data	    bss	    dec	    hex	filename
-    784	      8	   1568	   2360	    938	2_gpio_output.elf
+    816	      8	   1568	   2392	    958	4_gpio_input.elf
 Finished building: default.size.stdout
  

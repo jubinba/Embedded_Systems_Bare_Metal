@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;2_gpio_bit_set_reset&apos; to &apos;3_gpio_bit_set_reset&apos;" description="Rename resource &apos;2_gpio_bit_set_reset&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/2_gpio_bit_set_reset" name="3_gpio_bit_set_reset" stamp="1761128562543" updateReferences="true"/>
+</session>
