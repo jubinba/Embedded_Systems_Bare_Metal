@@ -119,7 +119,7 @@ int main (void)
  8000232:	4a09      	ldr	r2, [pc, #36]	; (8000258 <main+0x54>)
  8000234:	f083 0320 	eor.w	r3, r3, #32
  8000238:	6013      	str	r3, [r2, #0]
-		for(int i = 0; i< 100000;i++)  {}// Applying a delay to the toggle
+		for(int i = 0; i< 100000;i++)  {} // Applying a delay to the toggle
  800023a:	2300      	movs	r3, #0
  800023c:	607b      	str	r3, [r7, #4]
  800023e:	e002      	b.n	8000246 <main+0x42>

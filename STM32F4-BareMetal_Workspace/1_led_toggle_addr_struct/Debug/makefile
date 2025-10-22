@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 0_led_toggle_addr
+BUILD_ARTIFACT_NAME := 1_led_toggle_addr_struct
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-0_led_toggle_addr.elf \
+1_led_toggle_addr_struct.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-0_led_toggle_addr.list \
+1_led_toggle_addr_struct.list \
 
 OBJCOPY_BIN += \
-0_led_toggle_addr.bin \
+1_led_toggle_addr_struct.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 0_led_toggle_addr.elf secondary-outputs
+main-build: 1_led_toggle_addr_struct.elf secondary-outputs
 
 # Tool invocations
-0_led_toggle_addr.elf: $(OBJS) $(USER_OBJS) C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\0_led_toggle_addr\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "0_led_toggle_addr.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\0_led_toggle_addr\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_addr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+1_led_toggle_addr_struct.elf: $(OBJS) $(USER_OBJS) C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\1_led_toggle_addr_struct\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "1_led_toggle_addr_struct.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\1_led_toggle_addr_struct\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_addr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,13 +70,13 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-0_led_toggle_addr.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "0_led_toggle_addr.list"
+1_led_toggle_addr_struct.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "1_led_toggle_addr_struct.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-0_led_toggle_addr.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "0_led_toggle_addr.bin"
+1_led_toggle_addr_struct.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "1_led_toggle_addr_struct.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

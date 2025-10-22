@@ -1,6 +1,7 @@
 //Where is the LED connected
 //Port: A
 //Pin:  5
+#include<stdint.h>
 #define PERIPH_BASE  					(0x40000000UL) // UL-Unsigned Long Constant
 #define AHB1PERIPH_OFFSET 				(0x00020000UL)
 #define AHB1PERIPH_BASE                 (PERIPH_BASE + AHB1PERIPH_OFFSET)
@@ -12,14 +13,6 @@
 #define RCC_OFFSET						(0x3800UL)
 #define RCC_BASE						(AHB1PERIPH_BASE + RCC_OFFSET)
 
-#define AHB1EN_R_OFFSET                 ( 0x30UL)
-#define RCC_AHB1EN_R					(*(volatile unsigned int*)(RCC_BASE + AHB1EN_R_OFFSET))
-
-#define MODE_R_OFFSET					(0x00UL)
-#define GPIOA_MODE_R					(*(volatile unsigned int*)(GPIOA_BASE + MODE_R_OFFSET))
-
-#define OD_R_OFFSET						(0x14UL)
-#define GPIOA_OD_R						(*(volatile unsigned int*)(GPIOA_BASE + OD_R_OFFSET ))
 
 #define GPIOAEN							(1U<<0) // 0(0b): 0000 0000 0000 0000 0000 0000 0000 0000
 												//1U <<0: 0000 0000 0000 0000 0000 0000 0000 0001
@@ -49,7 +42,7 @@ typedef struct
 	__IO uint32_t BSRR;       //GPIO port bit set/reset register
 	__IO uint32_t LCKR;       //GPIO port configuration lock register
 	__IO uint32_t AFR[2];     //GPIO alternate function registers(HIGH/LOW)
-}; GPIO_TypeDef;/*
+} GPIO_TypeDef;
 
 // The above structure can be simplified as
  *
@@ -70,27 +63,31 @@ typedef struct{
 	volatile uint32_t DUMMY[4];    // For properly arranging the bit gap between MODER and ODR
 	volatile uint32_t ODR;        //GPIO port output data register. We are using only MODER and ODR, Hence all others can be ignored
 
-}; GPIO_TypeDef;
+}GPIO_TypeDef;
+
+#define RCC		((RCC_TypeDef*)RCC_BASE)
+#define GPIOA	((GPIO_TypeDef*)GPIOA_BASE)
 
 
 int main (void)
 {
 
 	/* Enable clock access to GPIOA*/
-	RCC_AHB1EN_R |= GPIOAEN;
+	RCC->AHB1ENR |= GPIOAEN;
 
 	/* Set PA5 as Output Pin*/
-	GPIOA_MODE_R |= (1U<<10) ;      // Set only bit 10 to 1
-	GPIOA_MODE_R  &=~(1U<<11) ;   // Set only bit 11 to 0*
+
+	GPIOA->MODER |= (1U<<10) ;      // Set only bit 10 to 1
+	GPIOA->MODER &=~(1U<<11) ;   // Set only bit 11 to 0*
+
+
 
 
 	while(1)
 	{
 		/* Set PA 5 High*/
-		//GPIOA_OD_R |= LED_PIN;
-
 		/* Trying LED Toggle Operation*/
-		GPIOA_OD_R ^= LED_PIN; // ^ key will automatically toggle operation in the loop (ON/OFF/ON/OFF/......)
+		GPIOA->ODR ^= LED_PIN; // ^ key will automatically toggle operation in the loop (ON/OFF/ON/OFF/......)
 		for(int i = 0; i< 100000;i++)  {}// Applying a delay to the toggle
 	}
 }

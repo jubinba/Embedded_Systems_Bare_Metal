@@ -40,3 +40,45 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-10-20 21:34:14.552
 !MESSAGE Indexed '1_led_toggle_addr_struct' (3 sources, 0 headers) in 0.178 sec: 68 declarations; 69 references; 10 unresolved inclusions; 0 syntax errors; 31 unresolved names (18%)
+!SESSION 2025-10-21 16:51:48.516 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-21 16:52:14.246
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-21 16:52:14.392
+!MESSAGE Log4j initialized with config file C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-21 16:52:28.573
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-10-21 16:52:29.254
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+!SESSION 2025-10-22 11:02:07.275 -----------------------------------------------
+eclipse.buildId=Version 1.6.1
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-22 11:02:50.555
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-22 11:02:50.693
+!MESSAGE Log4j initialized with config file C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-22 11:03:02.731
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-10-22 11:03:03.371
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-22 11:07:11.563
+!MESSAGE Indexed '2_gpio_output' (3 sources, 53 headers) in 2.46 sec: 1,964 declarations; 2,810 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-22 12:17:01.151
+!MESSAGE Indexed '2_gpio_bit_set_reset' (3 sources, 62 headers) in 2.15 sec: 3,252 declarations; 5,274 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.023%)

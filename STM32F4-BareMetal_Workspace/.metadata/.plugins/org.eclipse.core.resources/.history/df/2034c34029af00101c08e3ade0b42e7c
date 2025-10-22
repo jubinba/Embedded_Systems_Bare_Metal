@@ -1,0 +1,4 @@
+#include "stm32f4xx.h"
+
+
+#include GPIOAEN     (1U<<0)  // for making lsb 1

@@ -1,0 +1,20 @@
+11:03:50 **** Incremental Build of configuration Debug for project 1_led_toggle_addr_struct ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "1_led_toggle_addr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\1_led_toggle_addr_struct\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_addr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1_led_toggle_addr_struct.elf
+ 
+arm-none-eabi-objdump -h -S  1_led_toggle_addr_struct.elf  > "1_led_toggle_addr_struct.list"
+arm-none-eabi-objcopy  -O binary  1_led_toggle_addr_struct.elf  "1_led_toggle_addr_struct.bin"
+arm-none-eabi-size   1_led_toggle_addr_struct.elf 
+   text	   data	    bss	    dec	    hex	filename
+    784	      8	   1568	   2360	    938	1_led_toggle_addr_struct.elf
+Finished building: 1_led_toggle_addr_struct.list
+Finished building: default.size.stdout
+ 
+ 
+Finished building: 1_led_toggle_addr_struct.bin
+ 
+
+11:03:54 Build Finished. 0 errors, 0 warnings. (took 4s.598ms)
+
