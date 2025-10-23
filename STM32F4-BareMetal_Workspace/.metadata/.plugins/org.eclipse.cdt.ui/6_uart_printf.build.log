@@ -1,0 +1,20 @@
+15:50:59 **** Incremental Build of configuration Debug for project 6_uart_printf ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"C:/Users/ASUS/Desktop/STM32F4-BareMetal_Workspace/F4_chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/ASUS/Desktop/STM32F4-BareMetal_Workspace/F4_chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "6_uart_printf.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ASUS\Git\Embedded_Systems_Bare-Metal\STM32F4-BareMetal_Workspace\6_uart_printf\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6_uart_printf.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6_uart_printf.elf
+ 
+arm-none-eabi-objdump -h -S  6_uart_printf.elf  > "6_uart_printf.list"
+arm-none-eabi-objcopy  -O binary  6_uart_printf.elf  "6_uart_printf.bin"
+arm-none-eabi-size   6_uart_printf.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5472	    108	   1596	   7176	   1c08	6_uart_printf.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6_uart_printf.list
+Finished building: 6_uart_printf.bin
+ 
+ 
+
+15:51:00 Build Finished. 0 errors, 0 warnings. (took 1s.94ms)
+

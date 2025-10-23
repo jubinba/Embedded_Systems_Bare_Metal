@@ -127,3 +127,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2025-10-23 08:55:33.081
 !MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-23 15:45:19.063
+!MESSAGE Indexed '6_uart_printf' (3 sources, 60 headers) in 3.26 sec: 2,889 declarations; 3,856 references; 4 unresolved inclusions; 30 syntax errors; 719 unresolved names (9.6%)
