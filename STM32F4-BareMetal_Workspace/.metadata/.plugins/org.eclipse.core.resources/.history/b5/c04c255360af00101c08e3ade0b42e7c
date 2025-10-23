@@ -1,0 +1,42 @@
+// User Push Button
+// PC13
+
+
+#include "stm32f4xx.h"
+
+#define GPIOAEN     (1U<<0)  // Enable clock access for GPIO A (making lsb 1)
+#define UART2EN 	(1U<<17) // Enable clock access for USART 2
+
+
+int main(void)
+{
+
+	while(1)
+	{
+		}
+}
+
+//Creating necessary functions for UART configuration
+
+void uart2_tx_init(void)
+	{
+
+	/**************Configure uart tx gpio pin***************/
+
+	/*Enable Clock Access for GPIOA(GPIOA because pins is PA2)*/
+	RCC->AHB1ENR |= GPIOAEN;
+	/*Set PA2 mode to Alternate Function Mode*/
+	GPIOA->MODER &=~(1<<4); // set bit 4 to 0
+	GPIOA->MODER |=(1<<5); // set bit 5 to 1
+	/*Set PA2 alternate function type to UART_TX (AF07)*/
+
+	/****************Configure UART module************************/
+	/*Enable clock access to uart2*/
+	/*Configure baud rate*/
+	/*Configure the transfer direction*/
+	/*Enable uart2 module*/
+
+
+
+
+	}
